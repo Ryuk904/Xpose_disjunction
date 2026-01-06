@@ -1186,6 +1186,20 @@ and o1.o_orderdate between date '1995-01-01' and date '1995-12-31'
 and o2.o1_orderdate between date '1995-01-01' and date '1995-12-31'
 group by c_address;""", False, True, False, False),
 
+TestQuery("OR_RANGES_1", """SELECT *
+          FROM lineitem
+          WHERE  (l_quantity BETWEEN 10 AND 20 OR l_quantity BETWEEN 30 AND 40);""", False, False, False, True),
+
+TestQuery("OR_RANGES_2", """SELECT l_orderkey, l_partkey
+          FROM lineitem
+WHERE (l_quantity BETWEEN 10 AND 20 OR l_quantity BETWEEN 30 AND 40)
+  AND l_discount > 0.05;""", False, False, False, True,True),
+
+TestQuery("NEP_Test", """SELECT *
+          FROM lineitem
+          WHERE l_quantity>20 and l_quantity<>30 and l_discount > 0.05 and l_discount<>0.09;""", False, False, False, True),
+
+
                      ]
     return test_workload
 

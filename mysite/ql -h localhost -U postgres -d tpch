@@ -1,0 +1,26 @@
+                                                    List of databases
+     Name     |  Owner   | Encoding | Locale Provider | Collate | Ctype | ICU Locale | ICU Rules |   Access privileges   
+--------------+----------+----------+-----------------+---------+-------+------------+-----------+-----------------------
+ footballdb   | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | =Tc/postgres         +
+              |          |          |                 |         |       |            |           | postgres=CTc/postgres+
+              |          |          |                 |         |       |            |           | himanshu=CTc/postgres
+ imdb         | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ kaggle       | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ lithe_mutant | kaptaan  | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ postgres     | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ stack        | kaptaan  | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ t_dataset1   | kaptaan  | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ t_dataset2   | kaptaan  | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ t_dataset3   | kaptaan  | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ t_dataset4   | kaptaan  | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ template0    | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | =c/postgres          +
+              |          |          |                 |         |       |            |           | postgres=CTc/postgres
+ template1    | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | =c/postgres          +
+              |          |          |                 |         |       |            |           | postgres=CTc/postgres
+ tpch         | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ tpch_backup  | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | 
+ tpchdb       | postgres | UTF8     | libc            | en_IN   | en_IN |            |           | =Tc/postgres         +
+              |          |          |                 |         |       |            |           | postgres=CTc/postgres+
+              |          |          |                 |         |       |            |           | tpch=CTc/postgres
+(15 rows)
+
