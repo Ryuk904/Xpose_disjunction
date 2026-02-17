@@ -96,6 +96,7 @@ USE_INDEX = "use_index"
 
 
 NEP_ = "NEP"
+RANGE_REFINEMENT = "RANGE REFINEMENT"
 
 LOG_FORMAT = '%(name)s -- %(levelname)s -- %(message)s'
 

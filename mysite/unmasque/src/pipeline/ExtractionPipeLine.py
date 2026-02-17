@@ -4,6 +4,7 @@ from ..core.dataclass.genPipeline_context import GenPipelineContext
 from ..core.dataclass.pgao_context import PGAOcontext
 from ...src.pipeline.fragments.DisjunctionPipeLine import DisjunctionPipeLine
 from ...src.pipeline.fragments.NepPipeLine import NepPipeLine
+from ...src.pipeline.fragments.RangeRefinementPipeLine import RangeRefinementPipeLine
 from .abstract.generic_pipeline import GenericPipeLine
 from ..core.elapsed_time import create_zero_time_profile
 from ..util.constants import FROM_CLAUSE, START, DONE, RUNNING, PROJECTION, \
@@ -30,6 +31,7 @@ class IOState:
 
 
 class ExtractionPipeLine(DisjunctionPipeLine,
+                         RangeRefinementPipeLine,
                          NepPipeLine):
 
     def __init__(self, connectionHelper, name="Extraction PipeLine"):
@@ -99,6 +101,13 @@ class ExtractionPipeLine(DisjunctionPipeLine,
         if not check:
             # self.error += OK
             self.logger.error(self.error)
+            self.update_state(ERROR)
+            self.time_profile.update(time_profile)
+            return None
+
+        check, time_profile = self._refine_disjunction_ranges(query, core_relations, time_profile)
+        if not check:
+            self.logger.error("Range refinement failed.")
             self.update_state(ERROR)
             self.time_profile.update(time_profile)
             return None

@@ -1193,7 +1193,7 @@ TestQuery("OR_RANGES_1", """SELECT l_orderkey, l_partkey
 TestQuery("OR_RANGES_2", """SELECT l_orderkey, l_partkey
           FROM lineitem
 WHERE (l_quantity BETWEEN 10 AND 20 OR l_quantity BETWEEN 30 AND 40)
-  AND l_discount > 0.05;""", False, False, False, True,True),
+  AND l_discount > 0.05;""", False, False, False, False,True),
 
 TestQuery("NEP_Test", """SELECT *
           FROM lineitem
